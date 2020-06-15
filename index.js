@@ -46,7 +46,7 @@ app.use('/static',  express.static(__dirname + '/static'));
 
 opensslcap.getCapabilities(function(err, capabilities) {
 	var template = {
-		title: "CertificateTools.com X509 Certificate Generator",
+		title: "X509 Certificate Generator",
 		certtemplates: certtemplates,
 		javascripttemplates: JSON.stringify(certtemplates, null, 4),
 		capabilities: capabilities,
@@ -72,13 +72,13 @@ opensslcap.getCapabilities(function(err, capabilities) {
 		                console.log('HTTPS connection from ' + ip);
 		                res.render('ocsp_checker.html', template);
 		        });
-	
+
 	app.get('/csr-generator', function(req, res) {
 		let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 		console.log('HTTPS connection from ' + ip);
 		res.render('csr_generator.html', template);
     });
-	
+
 	app.get('/manage-certs', function(req, res) {
 		let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 		console.log('HTTPS connection from ' + ip);
