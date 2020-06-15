@@ -7,7 +7,7 @@ RUN apk add --update openssl git && \
 
 WORKDIR /root
 
-RUN git clone https://github.com/lspiehler/node-openssl-rest.git
+RUN git clone https://github.com/nauqnew/cert-tool.git
 
 WORKDIR /root/node-openssl-rest
 
