@@ -9,9 +9,9 @@ WORKDIR /root
 
 RUN git clone https://github.com/nauqnew/cert-tool.git
 
-WORKDIR /root/node-openssl-rest
+WORKDIR /root/cert-tool
 
-VOLUME /root/node-openssl-rest/ca
+VOLUME /root/cert-tool/ca
 
 RUN npm install
 
@@ -22,5 +22,7 @@ RUN bower install --allow-root eonasdan-bootstrap-datetimepicker#latest bootstra
 EXPOSE 8443
 
 EXPOSE 8080
+
+ENV PUBLICHTTP 127.0.0.1:8443
 
 CMD ["node", "index.js"]
