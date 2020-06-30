@@ -46,7 +46,7 @@ app.use('/static',  express.static(__dirname + '/static'));
 
 opensslcap.getCapabilities(function(err, capabilities) {
 	var template = {
-		title: "X509 Certificate Generator",
+		title: "X509证书生成工具",
 		certtemplates: certtemplates,
 		javascripttemplates: JSON.stringify(certtemplates, null, 4),
 		capabilities: capabilities,
